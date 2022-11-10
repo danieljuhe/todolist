@@ -1,12 +1,44 @@
+body{
+    background: rgb(75,66,255);
+    background: linear-gradient(90deg, rgba(75,66,255,1) 0%, rgba(163,29,253,1) 50%, rgba(69,221,252,1) 100%);
+}
+
 .main{
     display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-Content: center;
-  
+    margin-top: 150px;
+}
+
+.toodo{
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(44, 44, 44);
+    border-radius: 20px;
+    
+}
+.ptitle{
+    font-size: 100px;
+    color: aliceblue;
 }
 
 input{
     border-radius: 5px;
-    border-color: rgba(167, 167, 167, 0.622);
+    border-color: rgba(212, 212, 212, 0.622);
+    background: rgb(93,219,233);
+    background: radial-gradient(circle, rgba(93,219,233,1) 0%, rgba(148,187,233,1) 100%);
+    color: aliceblue;
+    position: relative;
+}
+
+.input{
+    width: 500px;
+    height: 35px;
+}
+h1{
+    color:aliceblue;
 }
