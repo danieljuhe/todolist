@@ -13,6 +13,7 @@ body{
 
 .toodo{
     width: 600px;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,12 +34,17 @@ input{
     background: radial-gradient(circle, rgba(93,219,233,1) 0%, rgba(148,187,233,1) 100%);
     color: aliceblue;
     position: relative;
+    align-items: center;
+    justify-content: center;
 }
 
 .input{
     width: 500px;
     height: 35px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
 }
-h1{
+h4{
     color:aliceblue;
 }
