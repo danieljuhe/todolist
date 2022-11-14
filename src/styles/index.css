@@ -20,7 +20,10 @@ body{
     justify-content: center;
     background-color: rgb(44, 44, 44);
     border-radius: 20px;
-    
+    padding-bottom: 20px;
+    -webkit-box-shadow: 0px 0px 119px -6px rgba(209,61,209,1);
+    -moz-box-shadow: 0px 0px 119px -6px rgba(209,61,209,1);
+    box-shadow: 0px 0px 119px -6px rgba(209,61,209,1);
 }
 .ptitle{
     font-size: 100px;
@@ -47,4 +50,18 @@ input{
 }
 h4{
     color:aliceblue;
+}
+.divh4{
+    display: flex;
+    flex-direction: row;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    justify-content: space-between;
+}
+.button{
+    border-radius: 20%;
+    background: rgb(93,219,233);
+    background: radial-gradient(circle, rgba(93,219,233,1) 0%, rgba(148,187,233,1) 100%);
+    color: aliceblue;
+    border-color: aliceblue;
 }

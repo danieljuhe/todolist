@@ -21,18 +21,22 @@ const Home = () => {
 	} 
 
 	const erase = (event) => {
-		todos.filter(todo => todo!==todo);
+		let filteredTodos = todos.filter(todo => todo !== event.target.id);
+		setTodos(filteredTodos);
 	}
 	
 	return (
 		<div className="main">
 			<div className="toodo">
-				<div className="title"><p className="ptitle">toodolist</p></div>
+				<div className="title"><p className="ptitle">todolist</p></div>
 				<div className="imputdiv">
 					<input type="text" className="input" value={inputControler} onChange={inputvalue} onKeyDown={keypress}></input>
 					<div className="second">{todos.map((todo,index)=>{
 						return (
-							<div className="divh4"><h4 key={index}>{todo}<button className="button" onClick={erase}>X</button></h4></div>
+							<div key={index} className="divh4">
+								<h4>{todo}</h4>
+								<button className="button" id={todo} onClick={erase}> X </button>
+							</div>
 						)
 					})}</div>
 				</div>
