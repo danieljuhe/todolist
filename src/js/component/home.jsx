@@ -21,7 +21,7 @@ const Home = () => {
 	} 
 
 	const erase = (event) => {
-		setTodos([])
+		todos.filter(todo => todo!==todo);
 	}
 	
 	return (
