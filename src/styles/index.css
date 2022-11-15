@@ -64,6 +64,7 @@ h4{
     background: radial-gradient(circle, rgba(93,219,233,1) 0%, rgba(148,187,233,1) 100%);
     color: aliceblue;
     border-color: aliceblue;
+    display: none;
 }
 .count{
     color:aqua;
