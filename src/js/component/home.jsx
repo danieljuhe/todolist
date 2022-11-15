@@ -24,7 +24,8 @@ const Home = () => {
 		let filteredTodos = todos.filter(todo => todo !== event.target.id);
 		setTodos(filteredTodos);
 	}
-	
+
+
 	return (
 		<div className="main">
 			<div className="toodo">
@@ -32,13 +33,17 @@ const Home = () => {
 				<div className="imputdiv">
 					<input type="text" className="input" value={inputControler} onChange={inputvalue} onKeyDown={keypress}></input>
 					<div className="second">{todos.map((todo,index)=>{
-						return (
-							<div key={index} className="divh4">
-								<h4>{todo}</h4>
-								<button className="button" id={todo} onClick={erase}> X </button>
-							</div>
-						)
-					})}</div>
+							return (
+								<div key={index} className="divh4">
+									<h4>{todo}</h4>
+									<button className="button" id={todo} onClick={erase}> X </button>
+								</div>
+							)
+						})}
+					</div>
+					<p className="count">
+						{todos.length === 0 ? <p>Nothing to do today</p>:<p>You must to do {todos.length} tasks</p>}
+					</p>
 				</div>
 			</div>
 		</div>
