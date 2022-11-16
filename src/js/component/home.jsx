@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import '../../styles/index.css';
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
 
-//create your first component
 const Home = () => {
 	const [inputControler, setInputControler]=useState();
 	const [todos, setTodos]=useState([]);
@@ -42,16 +39,17 @@ const Home = () => {
 				<div className="imputdiv">
 					<input type="text" className="input" value={inputControler} onChange={inputvalue} onKeyDown={keypress}></input>
 					<div className="second">{todos.map((todo,index)=>{
-							return (
+							
+							return (	
 								<div key={index} className="divh4" onMouseOver={buttonblock} onMouseOut={buttonhidden}>
 									<h4>{todo}</h4>
-									<button className="button" key={index} id={todo} onClick={erase}  style={{display: (button=="appear") ? 'block':'none',}}> X </button>
+									<button className="button" id={todo} onClick={erase}  style={{display: (button=="appear") ? 'block':'none',}}> X </button>
 								</div>
 							)
 						})}
 					</div>
 					<p className="count">
-						{todos.length === 0 ? <p>Nothing to do today</p>:<p>You must to do {todos.length} tasks</p>}
+						{todos.length === 0 ? <p>Nothing to do today</p>:<p>You must do {todos.length} tasks</p>}
 					</p>
 				</div>
 			</div>
