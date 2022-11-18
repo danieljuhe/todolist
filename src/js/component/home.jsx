@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import '../../styles/index.css';
+import Todo from "./todo";
 
 
 const Home = () => {
 	const [inputControler, setInputControler]=useState();
 	const [todos, setTodos]=useState([]);
-	const [button, setButton]=useState("");
+	
 
 	const inputvalue = (event) => {
 		setInputControler(event.target.value)
@@ -13,24 +14,10 @@ const Home = () => {
 
 	const keypress = (event) => {
 		if (event.key === 'Enter'){
-			setTodos(prev => [...prev,inputControler])
+			setTodos([...todos,inputControler])
 			setInputControler("")
 		}
 	} 
-
-	const erase = (event) => {
-		let filteredTodos = todos.filter(todo => todo !== event.target.id);
-		setTodos(filteredTodos);
-	}
-
-	const buttonblock = (event) => {
-		setButton("appear")
-	}
-
-	const buttonhidden = () => {
-		setButton("")
-	}
-
 
 	return (
 		<div className="main">
@@ -39,13 +26,7 @@ const Home = () => {
 				<div className="imputdiv">
 					<input type="text" className="input" value={inputControler} onChange={inputvalue} onKeyDown={keypress}></input>
 					<div className="second">{todos.map((todo,index)=>{
-							
-							return (	
-								<div key={index} className="divh4" onMouseOver={buttonblock} onMouseOut={buttonhidden}>
-									<h4>{todo}</h4>
-									<button className="button" id={todo} onClick={erase}  style={{display: (button=="appear") ? 'block':'none',}}> X </button>
-								</div>
-							)
+							return <Todo todo={todo}  todos={todos} setTodos={setTodos} index={index}/>
 						})}
 					</div>
 					<p className="count">
